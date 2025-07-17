@@ -1,0 +1,162 @@
+.admin-dashboard {
+    display: flex;
+    height: 100vh;
+    font-family: sans-serif;
+    margin: 0px;
+    padding: 0px;
+    width: 100vw;;
+}
+
+.sidebar {
+    width: 220px;
+    background-color: #022c43;
+    color: #fff;
+    padding: 20px;
+}
+
+.brand {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #00bfa6;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    margin: 15px 0;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.dashboard-content {
+    flex-grow: 1;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.logout-btn {
+    background-color: #00bfa6;
+    color: #fff;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+}
+.logout-btn:hover {
+  background-color:#058b79;
+}
+
+.overview {
+    margin-bottom: 30px;
+}
+
+.overview-cards, .leave-cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    flex: 1;
+    min-width: 180px;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+.admin-dashboard {
+    display: flex;
+    height: 100vh;
+    font-family: sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+.sidebar {
+    width: 220px;
+    background-color: #022c43;
+    color: #fff;
+    padding: 20px;
+}
+
+.brand {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #00bfa6;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    margin: 15px 0;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.dashboard-content {
+    flex-grow: 1;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.logout-btn {
+    background-color: #00bfa6;
+    color: #fff;
+    padding: 8px 15px;
+    font-family: sans-serif;
+    border: none;
+    font-size: medium;
+    cursor: pointer;
+}
+
+.overview {
+    margin-bottom: 30px;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    flex: 1;
+    min-width: 180px;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.p{
+    font-size: medium;
+    color:black;
+}
+.card h3 {
+    margin-bottom: 10px;
+}
