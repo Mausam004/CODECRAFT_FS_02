@@ -1,8 +1,8 @@
 import express from 'express';
-import { loginAdmin } from "../controller/authController.js";
+import { loginAdmin,getDashboardData } from "../controller/authController.js";
 import { getEmployees, createEmployee, updateEmployee, deleteEmployee } from "../controller/employeeController.js";
 import {getDepartments,createDepartment,updateDepartment, deleteDepartment} from "../controller/departmentController.js";
-import {getSalaries,createSalary,updateSalary,deleteSalary} from "../controller/salaryController.js"
+import {getSalaries,createSalary,updateSalary,deleteSalary} from "../controller/salaryController.js";
 
 const router = express.Router();
 
@@ -20,6 +20,8 @@ router.get('/get-salary', getSalaries);
 router.post('/create-salary', createSalary);
 router.put('/update-salary/:id', updateSalary);
 router.delete('/delete-salary/:id', deleteSalary);
+
+router.get('/dashboard-data', getDashboardData);
 
 
 

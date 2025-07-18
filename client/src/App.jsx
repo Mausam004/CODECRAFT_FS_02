@@ -8,6 +8,7 @@ import Dashboard from './components/Dashboard';
 import EmployeeList from './components/EmployeeList';
 import DepartmentList from './components/DepartmentList';
 import SalaryList from './components/SalaryList';
+import Profile from './components/Profile';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Route path="/employee-list" element={<EmployeeList/>}/>
       <Route path="/department-list" element={<DepartmentList/>}/>
       <Route path="/salary-list" element={<SalaryList/>}/>
+      <Route path="/profile" element={<Profile/>}/>
     </Routes>
     <ToastContainer/>
     </BrowserRouter>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import "./salarylist.css";
 
 const SalaryList = () => {
     const [salaries, setSalaries] = useState([]);
@@ -13,6 +14,10 @@ const SalaryList = () => {
         pay_date: ''
     });
     const [editingId, setEditingId] = useState(null);
+    const [warning, setWarning] = useState('');
+
+    
+
 
     const fetchSalaries = async () => {
         const res = await axios.get('http://localhost:8000/api/auth/get-salary');
@@ -29,9 +34,24 @@ const SalaryList = () => {
         fetchEmployees();
     }, []);
 
+    // const handleChange = (e) => {
+    //     setFormData({ ...formData, [e.target.name]: e.target.value });
+    // };
     const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+
+    // Only check for duplicates when changing employee_id
+    if (name === 'employee_id') {
+        const exists = salaries.some(sal => sal.employee_id.toString() === value);
+        if (exists && editingId === null) {
+            setWarning('Salary already exists for this employee.');
+        } else {
+            setWarning('');
+        }
+    }
+};
+
 
     const handleTotalSalary = () => {
         const total = parseFloat(formData.base_salary || 0) + parseFloat(formData.bonus || 0) - parseFloat(formData.deductions || 0);
@@ -76,11 +96,12 @@ const SalaryList = () => {
                     <option key={emp.id} value={emp.id}>{emp.name}</option>
                 ))}
             </select>
+            {warning && <div style={{ color: 'red', marginBottom: '10px' }}>{warning}</div>}
             <input name="base_salary" value={formData.base_salary} onChange={handleChange} placeholder="Base Salary" />
             <input name="bonus" value={formData.bonus} onChange={handleChange} placeholder="Bonus" />
             <input name="deductions" value={formData.deductions} onChange={handleChange} placeholder="Deductions" />
             <input name="pay_date" type="date" value={formData.pay_date} onChange={handleChange} />
-            <button onClick={() => editingId ? handleUpdate(editingId) : handleCreate()}>
+            <button onClick={() => editingId ? handleUpdate(editingId) : handleCreate()} disabled={!!warning && editingId === null}>
                 {editingId ? 'Update' : 'Create'}
             </button>
 

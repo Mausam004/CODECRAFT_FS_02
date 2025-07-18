@@ -1,41 +1,47 @@
 /* Container */
-div {
+/* div {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 20px;
     max-width: 1000px;
     margin: auto;
-}
+} */
 
 /* Heading */
 h2 {
     text-align: center;
     margin-bottom: 20px;
     color: #333;
+    font-size: 40px;
 }
 
-/* Input Fields */
-input {
+.form-field {
     padding: 10px;
     margin: 5px;
-    width: calc(100% / 3 - 20px);
+    width: calc(100% / 4 - 20px);  /* Adjust based on number of fields per row */
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    appearance: none; /* For consistent select styling */
 }
+
 
 /* Create / Update Button */
 button {
     padding: 10px 20px;
     margin: 10px 5px;
-    background-color: #007bff;
+    background-color: #00bfa6;
     color: #fff;
     border: none;
+    height: 40px;
+    width: 100px;
     border-radius: 4px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #058b79;
 }
 
 /* Table Styles */
@@ -53,7 +59,7 @@ th, td {
 }
 
 th {
-    background-color: #007bff;
+    background-color: #001F3F;
     color: #fff;
 }
 

@@ -1,40 +1,79 @@
-
-body, html {
+.home-page {
+  background-image: url('/image2.png'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  color: white;
+  align-items: center;      
+  justify-content: flex-start;  
+  padding-left: 120px; 
   margin: 0;
   padding: 0;
-  height: 100%;
-  width: 100%;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to right, #014362,#022c43);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  font-family: sans-serif;
 }
 
-h1 {
-  font-size: 40px;
-  color:white;
-  margin-bottom: 10px;
+.home-content {
+  max-width: 600px;
 }
 
-p {
-  font-size: 18px;
-  color:white;
-  margin-bottom: 25px;
+.line-start {
+  margin-left: 250px;
+  display: block;
 }
 
-button {
-  background-color:#00bfa6;
+.line-indent {
+  margin-left: 350px; /* More indentation */
+  display: block;
+}
+
+.line-end {
+  margin-left: 100px; /* Less indentation than "to" */
+  display: block;
+  white-space: nowrap;
+}
+
+.line-closer {
+  margin-left: 250px; /* Less indentation than "to" */
+  display: block;
+  white-space: nowrap;
+}
+
+.home-title {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+
+.home-title1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.home-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  margin-left: 250px;
+}
+
+.home-login-btn {
+  background-color: #00bfa6;
   color: white;
+  padding: 10px 24px;
   border: none;
-  padding: 12px 30px;
-  font-size: 18px;
-  border-radius: 8px;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-left: 350px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s ease;
 }
 
-button:hover {
-  background-color:#02312b;
+.home-login-btn:hover {
+  background-color: #009e8b;
 }

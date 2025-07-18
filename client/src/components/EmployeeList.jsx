@@ -9,6 +9,7 @@ const EmployeeList = () => {
         name: '',
         email: '',
         mobile: '',
+        gender:'',
         department_id: '',
         joining_date: ''
     });
@@ -58,6 +59,7 @@ const EmployeeList = () => {
             name: '',
             email: '',
             mobile: '',
+            gender:'',
             department_id: '',
             joining_date: ''
         });
@@ -66,23 +68,29 @@ const EmployeeList = () => {
     return (
         <div style={{ padding: '20px' }}>
             <h2>Employee List</h2>
-            <input name="name" value={formData.name} onChange={handleChange} placeholder="Name" />
-            <input name="email" value={formData.email} onChange={handleChange} placeholder="Email" />
-            <input name="mobile" value={formData.mobile} onChange={handleChange} placeholder="Mobile" />
+            <input className='form-field' name="name" value={formData.name} onChange={handleChange} placeholder="Name" />
+            <input className='form-field' name="email" value={formData.email} onChange={handleChange} placeholder="Email" />
+            <input className='form-field' name="mobile" value={formData.mobile} onChange={handleChange} placeholder="Mobile" />
+             <select className='form-field' name="gender" value={formData.gender} onChange={handleChange}>
+                <option value="" disabled hidden>Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
             <select
+            className='form-field'
             name="department_id"
             value={formData.department_id}
-             onChange={handleChange}
-              >
-    <option value="">Select Department</option>
-    {departments.map((dept) => (
-        <option key={dept.id} value={dept.id}>
-            {dept.name}
-        </option>
-    ))}
-</select>
+             onChange={handleChange}>
+                <option value="">Select Department</option>
+                {departments.map((dept) => (
+                    <option key={dept.id} value={dept.id}>
+                        {dept.name}
+                    </option>
+                ))}
+            </select>
    
-            <input name="joining_date" type="date" value={formData.joining_date} onChange={handleChange} placeholder="Joining Date" />
+            <input className='form-field' name="joining_date" type="date" value={formData.joining_date} onChange={handleChange} placeholder="Joining Date" />
             <button onClick={() => editingId ? handleUpdate(editingId) : handleCreate()}>
                 {editingId ? 'Update' : 'Create'}
             </button>
@@ -90,7 +98,7 @@ const EmployeeList = () => {
             <table border="1" style={{ marginTop: '20px', width: '100%' }}>
                 <thead>
                     <tr>
-                        <th>Name</th><th>Email</th><th>Mobile</th><th>Department</th><th>Total Salary</th><th>Joining Date</th><th>Actions</th>
+                        <th>Name</th><th>Email</th><th>Mobile</th><th>Gender</th><th>Department</th><th>Total Salary</th><th>Joining Date</th><th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -99,6 +107,7 @@ const EmployeeList = () => {
                             <td>{emp.name}</td>
                             <td>{emp.email}</td>
                             <td>{emp.mobile}</td>
+                             <td>{emp.gender}</td>
                             <td>{emp.department_name || 'N/A'}</td>
                             <td>₹{emp.total_salary || 0}</td>
                             <td>{emp.joining_date}</td>
@@ -109,6 +118,7 @@ const EmployeeList = () => {
                                         name: emp.name,
                                         email: emp.email,
                                         mobile: emp.mobile,
+                                        gender:emp.gender,
                                         department_id: emp.department_id,
                                         joining_date: emp.joining_date ? emp.joining_date.split('T')[0] : ''
                                     });
