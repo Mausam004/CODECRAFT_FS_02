@@ -102,7 +102,7 @@ body, html {
   display: grid;
   grid-template-columns: repeat(4, 1fr); 
   gap: 2rem;
-  margin-bottom: 1rem; 
+  margin-bottom: 2rem; 
 }
 
 
@@ -111,7 +111,7 @@ body, html {
   border-left: 6px solid #001F3F;
   border-radius: 8px;
   padding: 1.5rem;
-  height: 250px; 
+  height: 210px; 
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -132,7 +132,7 @@ body, html {
 }
 
 .card p {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: bold;
   color: #212529;
 }
@@ -140,7 +140,7 @@ body, html {
 .clickable-card {
   text-decoration: none;
   color: inherit;
-    height: 250px;
+    height: 210px;
     padding: 20px;
     background: #fff;
     border-radius: 12px;

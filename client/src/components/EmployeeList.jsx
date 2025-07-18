@@ -82,7 +82,7 @@ const EmployeeList = () => {
             name="department_id"
             value={formData.department_id}
              onChange={handleChange}>
-                <option value="">Select Department</option>
+                <option value="" disabled selected hidden>Select Department</option>
                 {departments.map((dept) => (
                     <option key={dept.id} value={dept.id}>
                         {dept.name}

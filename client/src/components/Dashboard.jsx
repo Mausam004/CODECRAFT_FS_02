@@ -14,15 +14,26 @@ const Dashboard = () => {
         otherCount: 0
     });
 
+    const navigate = useNavigate();
+    
+    useEffect(() => {
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (!user) {
+            navigate('/login');
+        } else {
+            fetchDashboardData();
+        }
+    }, [navigate]);
+
     useEffect(() => {
         fetchDashboardData();
     }, []);
+
 
     const fetchDashboardData = async () => {
         const res = await axios.get('http://localhost:8000/api/auth/dashboard-data');
         setData(res.data);
     };
-   const navigate = useNavigate();
 
     const handleLogout = () => {
         localStorage.removeItem("user");
@@ -93,7 +104,7 @@ const Dashboard = () => {
                     <div className="overview-cards" >
                         <div className="card">
                             <h3>Organization Overview (Bar Graph)</h3>
-                            <BarChart width={300} height={200} data={barData}>
+                            <BarChart width={250} height={150} data={barData}>
                                 <CartesianGrid strokeDasharray="3 3" />
                                 <XAxis dataKey="name" />
                                 <YAxis />

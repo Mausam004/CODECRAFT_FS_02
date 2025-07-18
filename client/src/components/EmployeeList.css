@@ -1,12 +1,3 @@
-/* Container */
-/* div {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: 20px;
-    max-width: 1000px;
-    margin: auto;
-} */
-
-/* Heading */
 h2 {
     text-align: center;
     margin-bottom: 20px;
@@ -17,17 +8,25 @@ h2 {
 .form-field {
     padding: 10px;
     margin: 5px;
-    width: calc(100% / 4 - 20px);  /* Adjust based on number of fields per row */
+    width: calc(100% / 4 - 20px);  
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 4px;
+    color:black;
     font-size: 16px;
     background-color: white;
-    appearance: none; /* For consistent select styling */
+    appearance: none; 
 }
 
 
-/* Create / Update Button */
+.form-field option[value=""] {
+  color: gray; /* Simulate placeholder color */
+}
+
+input ::placeholder{
+    color:black;
+}
+
 button {
     padding: 10px 20px;
     margin: 10px 5px;
@@ -44,7 +43,6 @@ button:hover {
     background-color: #058b79;
 }
 
-/* Table Styles */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -67,7 +65,6 @@ tr:hover {
     background-color: #f1f1f1;
 }
 
-/* Action Buttons */
 td button {
     background-color: #28a745;
     margin-right: 5px;
