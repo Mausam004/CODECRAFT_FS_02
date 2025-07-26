@@ -42,7 +42,8 @@ and a bar graph comparing employee counts across departments. It also includes q
 
 👥 Employee List Page
 This page displays a dynamic table of all employee records. Admins can view, edit, or delete employee information. 
-![Uploading image.png…]()
+<img width="1889" height="780" alt="image" src="https://github.com/user-attachments/assets/d772d7e5-6a0b-40d2-8313-3cbfeaf207d3" />
+
 
 
 
